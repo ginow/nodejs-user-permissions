@@ -3,5 +3,6 @@ function authUser(req, res, next) {
         res.status(403)
         return res.send('You need to sign in');
     }
+    next();
 }
 module.exports = { authUser };
