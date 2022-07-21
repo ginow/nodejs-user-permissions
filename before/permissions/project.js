@@ -8,7 +8,11 @@ function canViewProject(user, project) {
 function scopedProjects(user, projects) {
     return projects.filter(project => canViewProject(user, project))
 }
+function canDeleteProject(user, project) {
+    return project.userId === user.id
+}
 module.exports = {
     canViewProject,
-    scopedProjects
+    scopedProjects,
+    canDeleteProject
 }
